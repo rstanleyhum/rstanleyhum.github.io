@@ -54,5 +54,6 @@ Process:
 
 
 
-References
+References:  
+
 1. https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/
