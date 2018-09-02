@@ -11,7 +11,7 @@ The inspiration for this project was https://www.datadoghq.com/blog/engineering/
 
 First, I needed a C compiler for Cgo. I can use Scoop (http://scoop.sh) to install my tools.
 
-```
+```shell
 
 scoop install go
 scoop install python27
@@ -46,7 +46,7 @@ You need the -D MS_WIN64 for the compiler to work.
 
 In the golang src directory, create a main.go as follows:
 
-```
+```golang
 
 package main
 
@@ -70,21 +70,20 @@ Now in order for this to work then the python27.dll file from the 'current' dire
 
 Then do a
 
-```
+```shell
 go build .
 ```
 
 Running the executable should give the 
 
-```
+```shell
 Hello World
 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 20:25:58) [MSC v.1500 64 bit (AMD64)]
 ```
 
 Now if I use the nice open source library at https://github.com/sbinet/go-python then we get ...
 
-```
-
+```python
 package main
 
 import (
@@ -101,7 +100,7 @@ func main() {
 
 And you get ...
 
-```
+```shell
 hello, world!
 ```
 
