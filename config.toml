@@ -1,4 +1,4 @@
-baseURL = "https://www.stanleyhum.com/"
+baseURL = "https://rstanleyhum.github.io/"
 languageCode = "en-us"
 title = "Thoughts on Medicine and Technology"
 theme = "minimal"
