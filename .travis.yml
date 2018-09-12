@@ -1,0 +1,19 @@
+language: go
+
+go:
+  - master  # Use latest version of Go
+
+install:
+  - go get github.com/spf13/hugo  # Install latest version of Go
+
+script:
+  - hugo  # builds website
+  # - echo 'www.stanleyhum.com' > public/CNAME  # Create a CNAME file to use custom domain
+
+deploy:  # Deploy to GitHub pages
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  local_dir: public
+  on:
+    branch: master
