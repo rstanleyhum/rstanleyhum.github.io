@@ -9,7 +9,7 @@ So after much research I have decided to use the static site generator [Hugo](ht
 
 The biggest decision that I had to make was which of the many [themes](https://themes.gohugo.io/), I was going to use. Originally, I really liked the [Ananke](https://themes.gohugo.io/gohugo-theme-ananke/) theme and even cropped one of my photos of Ottawa for the home page.
 
-![By the canal in Ottawa in the summer.](/images/ottawa.jpg)
+![By the canal in Ottawa in the summer.](ottawa.jpg)
 
 But I found that I couldn't format the code blocks appropriately. With some experimentation, I found that it had to do, I think, with the [Tachyon](http://tachyons.io/docs/themes/skins/) library.
 
