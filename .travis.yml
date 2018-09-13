@@ -7,7 +7,6 @@ branches:
 script:
   - chmod 555 tools/hugo_0.48_linux # Make tool executable
   - tools/hugo_0.48_linux  # builds website
-  - echo 'www.stanleyhum.com' > public/CNAME  # Create a CNAME file to use custom domain
 
 deploy:  # Deploy to GitHub pages
   provider: pages
