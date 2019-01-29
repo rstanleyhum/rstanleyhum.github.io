@@ -5,8 +5,8 @@ branches:
   - master
 
 script:
-  - chmod 555 tools/hugo_0.48_linux # Make tool executable
-  - tools/hugo_0.48_linux  # builds website
+  - chmod 555 tools/hugo_0.53_linux # Make tool executable
+  - tools/hugo_0.53_linux  # builds website
 
 deploy:  # Deploy to GitHub pages
   provider: pages
