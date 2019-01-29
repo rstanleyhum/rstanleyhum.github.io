@@ -1,7 +1,7 @@
 ---
 title: "Creating ssh keys for the master key"
 date: 2018-04-26T20:37:43-04:00
-draft: true
+draft: false
 ---
 
 
@@ -12,11 +12,9 @@ draft: true
 3. 2 Micro SD at 8GB with adapter.
 4. 1 Mini HDMI to HDMI cable
 5. 1 USB hub
-
-5. 1 USB keyboard
-6. 1 Monitor with HDMI input
-
-7. 1 USB 8GB stick
+6. 1 USB keyboard
+7. 1 Monitor with HDMI input
+8. 1 USB 8GB stick
 
 
 Process:
