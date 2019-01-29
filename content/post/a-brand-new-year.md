@@ -2,7 +2,7 @@
 title: "A Brand New Year"
 date: 2019-01-29T07:10:15-05:00
 tags: []
-draft: true
+draft: false
 ---
 
 Welcome to 2019!
