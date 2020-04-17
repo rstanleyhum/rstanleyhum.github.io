@@ -1,0 +1,44 @@
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Site details-->
+    <meta name="author" content="{{ .Site.Params.AuthorName }}">
+
+    <!-- Page details -->
+	<title>{{ .Site.Title }}: {{ if eq .Section "post" }}{{ .Title }}{{ else }}Home{{ end }}</title>
+	<meta name="description" content="{{ if eq .Section "post" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+    <!-- Links -->
+    <link rel="canonical" href="{{ .Permalink }}">
+    
+    <!-- twitter card meta tags -->
+
+    <!-- facebook open graph tags -->
+
+    <!-- mastodon verification -->
+
+
+    <!-- Favicon -->
+	<link rel="shortcut icon" href="/favicon.ico">
+
+    <!-- Stylesheets and javascripts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i" />
+    <!-- <link rel="stylesheet" href={{ "css/fonts.css" | absURL }} />
+    <link rel="stylesheet" href={{ "css/style.css" | absURL }} />
+    <link rel="stylesheet" href={{ "css/code.css" | absURL }} /> -->
+    <link rel="stylesheet" href={{ "css/main.css" | absURL }} />
+    <link rel="stylesheet" href={{ "fontawesome/css/all.css" | absURL }} />
+
+    <!-- {{ if (fileExists "static/css/custom.css") -}}
+    <link rel="stylesheet" href={{ "css/custom.css" | absURL }} />
+    {{- end }} -->
+
+    <!-- <link rel="stylesheet" href="/css/site.min.css" /> -->
+    <script defer src={{ "fontawesome/js/all.js" | absURL }}></script>
+	<script src="/js/lib/modernizr-2.6.2.min.js"></script>
+</head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
