@@ -1,28 +1,4 @@
 <footer>
-    <nav>
-        <ul class="main">
-            <li>&copy; R. Stanley Hum {{ now.Format "2006" }}</li>
-        </ul>
-
-        <ul class="social">
-            {{ with .OutputFormats.Get "RSS" }}
-            <li><a href="{{ .RelPermalink }}" target="_blank"><i class="fas fa-rss"></i></a></li>
-            {{ end }}
-            <li><a href="https://linkedin.com/in/rstanleyhum" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://github.com/rstanleyhum" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://twitter.com/rstanleyhum" target="_blank"><i class="fab fa-twitter"></i></a></li>
-        </ul>
-    </nav>
+    &copy; R. Stanley Hum {{ now.Format "2006" }}
+    <a class="pull-right" href="https://twitter.com/rstanleyhum" target="_blank">@rstanleyhum</a>
 </footer>
-
-<script src="/js/site.min.js"></script>
-
-<script>
-    function doPrettyPrint(){
-        pres=document.getElementsByTagName('pre');
-        for (i=0; i < pres.length; i++) {
-            pres[i].className+=" prettyprint";
-        }
-        prettyPrint();
-    }
-</script>

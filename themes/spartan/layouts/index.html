@@ -1,8 +1,13 @@
 {{ define "main" }}
-<div class="container home">
-  {{ .Content }}
-  {{ range (where .Site.RegularPages "Section" "oldposts") }}
-    {{ .Render "li" }}
-  {{ end }}
-</div>
+
+<h2>Introduction</h2>
+
+My biography and why I have a website.
+
+
+<h2>Recent Posts</h2>
+{{ range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "posts") }}
+{{ .Render "li" }}
+{{ end }}
+
 {{ end }}
