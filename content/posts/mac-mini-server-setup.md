@@ -1,8 +1,8 @@
 ---
 title: "Mac Mini Server Setup"
 date: 2018-09-15T20:32:51-04:00
-tags: ['apple', 'keygen']
-categories: ['apple_cat', 'happy']
+tags: []
+categories: []
 draft: false
 ---
 

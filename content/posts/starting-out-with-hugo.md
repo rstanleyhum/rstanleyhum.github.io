@@ -1,8 +1,8 @@
 ---
 title: "Starting Out With Hugo"
 date: 2017-08-18T14:20:49-04:00
-tags: ["home", "happy"]
-categories: ["Development", "Rust"]
+tags: []
+categories: []
 draft: false
 ---
 
