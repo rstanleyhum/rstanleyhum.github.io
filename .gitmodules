@@ -1,6 +1,0 @@
-[submodule "themes/minimal"]
-	path = themes/minimal
-	url = https://github.com/calintat/minimal.git
-[submodule "themes/academic"]
-	path = themes/academic
-	url = https://github.com/gcushen/hugo-academic.git
