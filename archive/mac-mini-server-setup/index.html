@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Stanley Hum's website</title>
+  <link rel="stylesheet" href='https:&#x2F;&#x2F;www.stanleyhum.com&#x2F;css/mybulma.css'>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <div class="navbar-item">
+            <a class="navbar-item" href="/"><b>R. Stanley Hum</b></a>
+        </div>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/blog/">Current</a>
+            <a class="navbar-item" href="/archive/">Archived</a>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="navbar-item" href="mailto:r.stanley.hum@stanleyhum.com">Email</a>
+                <a class="navbar-item" href="https://github.com/rstanleyhum">GitHub</a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/rstanleyhum">LinkedIn</a>
+                <a class="navbar-item" href="https://twitter.com/rstanleyhum">Twitter</a>  
+            </div>
+        </div>
+    </div>
+  </nav>
+  <section class="section mx-6">
+    <div class="container mx-6 px-6">
+        
+<h1 class="title">
+  Mac Mini Server Setup
+</h1>
+<p class="subtitle"><strong>September 15, 2018</strong></p>
+<p>In this post, I will be describing setting up my mac mini as a iOS build server.</p>
+<p>In fact, I will be eventually using Travis with GitHub and Fastlane for my Flutter project but this is the local build setup.</p>
+<p>First, we will start with a clean install of High Sierra. Download the High Sierra Install from the AppStore and create the media with the following command:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ macOS\ High\ Sierra.app</span><span style="color:#c0c5ce;">
+</span></code></pre>
+<p>Reference: https://support.apple.com/en-us/HT201372</p>
+<h2 id="using-the-startup-manager">Using the Startup Manager</h2>
+<ol>
+<li>
+<p>Press and hold the Option key immediately after turning on or restarting the Mac.</p>
+</li>
+<li>
+<p>Release the Option key when you see the Startup Manager window</p>
+</li>
+</ol>
+<p>Reference: https://support.apple.com/en-us/HT202796</p>
+<h2 id="once-high-sierra-is-re-installed">Once High Sierra is re-installed</h2>
+<ol>
+<li>Check for software updates</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    softwareupdate -l</span><span style="color:#c0c5ce;">
+</span></code></pre>
+<ol start="2">
+<li>Update the software</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    softwareupdate -i -a</span><span style="color:#c0c5ce;">
+</span></code></pre>
+<ol start="3">
+<li>Check Remote Login status</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    sudo systemsetup -getremotelogin</span><span style="color:#c0c5ce;">
+</span></code></pre>
+<ol start="4">
+<li>Turn on remote access.</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    sudo systemsetup -setremotelogin on</span><span style="color:#c0c5ce;">
+</span></code></pre>
+<ol start="5">
+<li>Set computer name</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    sudo scutil --set HostName &lt;ComputerName&gt;  </span><span style="color:#c0c5ce;">
+    sudo scutil --set LocalHostName &lt;ComputerName&gt;  </span><span style="color:#c0c5ce;">
+    sudo scutil --set ComputerName &lt;ComputerName&gt;  </span><span style="color:#c0c5ce;">
+    dscacheutil -flushcache</span><span style="color:#c0c5ce;">
+</span></code></pre>
+<ol start="6">
+<li>Restart</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    sudo reboot</span><span style="color:#c0c5ce;">
+</span></code></pre><h2 id="now-for-setting-up-flutter-with-fastlane">Now for setting up Flutter with Fastlane</h2>
+<p>I have decided to use Flutter is the crossplatform framework. Fastlane seems to be the right tool to help with the deployment. In supports both Android and iOS with both testing and production. It also integrates with Flutter and Travis CI which means that I can eventually do the builds automatically from the cloud.</p>
+<p>First, however, it is easier to setup on a local machine.</p>
+<h2 id="setup-flutter-on-macos">Setup Flutter on MacOS</h2>
+<p>Reference: https://flutter.io/setup-macos/</p>
+<ol>
+<li>Get the Flutter SDK</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    curl -O https://storage.googleapis.com/flutter_infra/releases/beta/macos/flutter_macos_v0.7.3-beta.zip</span><span style="color:#c0c5ce;">
+</span></code></pre>
+<p>Note: curl -O is the macOS equivalent of wget</p>
+<ol start="2">
+<li>Extract to a development tools path</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    mkdir ~/bin</span><span style="color:#c0c5ce;">
+    cd ~/bin</span><span style="color:#c0c5ce;">
+    unzip ~/Downloads/flutter_macos_v0.7.3-beta.zip</span><span style="color:#c0c5ce;">
+    echo &#39;PATH=/Users/&lt;username&gt;/bin/flutter/bin:$PATH&#39; &gt;&gt; ~/.bashrc</span><span style="color:#c0c5ce;">
+    source ~/.bashrc</span><span style="color:#c0c5ce;">
+</span></code></pre>
+<p>NB: This doesn't work because ssh doesn't automatically load .bashrc. I suspect that you need .profile.</p>
+<ol start="3">
+<li>Run flutter doctor</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    flutter doctor -v</span><span style="color:#c0c5ce;">
+</span></code></pre><h2 id="install-xcode">Install Xcode</h2>
+<p>I could get the Command Line Tools to install without using the AppStore but I couldn't figure out how to do it for the full Xcode which Flutter needs.</p>
+<p>So you have to do it from the GUI. Eventually it will all be in the cloud and subsequent projects will not need the local installation.</p>
+<p>Once you download the Xcode from the AppStore, you may need to agree to the Xcode/iOS license.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    sudo xcodebuild -licence</span><span style="color:#c0c5ce;">
+</span></code></pre>
+<p>I had to run the XCode from the GUI to get the additional components to load.</p>
+<p>Now I can start up the iOS simulator.</p>
+<p>You should have <strong>/Applications/Xcode.app/Contents/Developer</strong> as the <code>xcode-select -p</code> value.</p>
+<p>You need to setup the iOS simulator</p>
+<p>Controlling the iOS Simulator from the Command Line</p>
+<p>Reference: https://medium.com/xcblog/simctl-control-ios-simulators-from-command-line-78b9006a20dc</p>
+<h2 id="install-homebrew-to-facilitate-deployment-of-flutter-app-to-a-physical-ios-device-locally">Install homebrew to facilitate deployment of Flutter app to a physical iOS device locally.</h2>
+<p>Go to https://brew.sh/</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">    brew update</span><span style="color:#c0c5ce;">
+    brew install --HEAD libimobiledevice</span><span style="color:#c0c5ce;">
+    brew install ideviceinstaller ios-deploy cocoapods</span><span style="color:#c0c5ce;">
+    pod setup</span><span style="color:#c0c5ce;">
+</span></code></pre>
+
+    </div>
+  </section>
+</body>
+
+</html>
