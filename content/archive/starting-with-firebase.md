@@ -1,8 +1,6 @@
 +++
 title = "Starting With Firebase"
 date = 2017-08-18T14:50:49-04:00
-tags = []
-draft = true
 +++
 
 I have decided to use a blog to chronical my adventures in using Firebase and other technologies.

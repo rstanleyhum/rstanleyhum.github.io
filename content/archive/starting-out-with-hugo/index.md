@@ -1,8 +1,6 @@
 +++
 title = "Starting Out With Hugo"
 date = 2017-08-18T14:20:49-04:00
-tags = []
-categories = []
 +++
 
 So after much research I have decided to use the static site generator [Hugo](https://gohugo.io). One of the reasons is that it is written in golang so that the code compiles to a single executable in either windows, linux and/or macOS which makes installation and usage really easy. No dependencies. No other programming languages.

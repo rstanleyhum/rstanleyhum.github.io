@@ -1,9 +1,6 @@
 +++
 title = "Mac Mini Server Setup"
 date = 2018-09-15T20:32:51-04:00
-tags = []
-categories = []
-draft = false
 +++
 
 In this post, I will be describing setting up my mac mini as a iOS build server.
