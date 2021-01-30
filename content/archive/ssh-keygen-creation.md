@@ -1,7 +1,6 @@
 +++
 title = "Creating ssh keys for the master key"
 date = 2018-04-26T20:37:43-04:00
-draft = false
 +++
 
 
