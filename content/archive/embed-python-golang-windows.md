@@ -1,9 +1,9 @@
----
-title: "Embedding Python 2.7 into Golang on Windows 10"
-date: 2018-04-22T15:57:18-04:00
-tags: []
-draft: false
----
++++
+title = "Embedding Python 2.7 into Golang on Windows 10"
+date = 2018-04-22T15:57:18-04:00
+tags = []
+draft = false
++++
 
 So I've been working on a healthcare data science project with Python 3, Pandas, and SciKit-Learn. Unfortunately, the project uses Java and I'm not interested in re-coding all of the data cleaning and the machine learning code in Java. So I've decided to look at creating a microservice. In order to make the microservice a standalone windows executable, I decided to look at writing a Golang program which embeds Python.
 
