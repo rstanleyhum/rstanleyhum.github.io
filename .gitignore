@@ -13,3 +13,8 @@ hugo.exe
 .history
 
 # End of https://www.gitignore.io/api/hugo,visualstudiocode
+
+## MacOS
+
+.DS_Store
+._*
